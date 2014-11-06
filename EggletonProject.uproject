@@ -1,6 +1,13 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "4.5",
+	"EngineAssociation": "{98D04239-445C-AE68-BDD3-499399436F68}",
 	"Category": "",
-	"Description": ""
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "EggletonProject",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
 }
