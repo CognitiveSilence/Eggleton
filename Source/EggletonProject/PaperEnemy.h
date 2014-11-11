@@ -2,23 +2,18 @@
 
 #pragma once
 
-#include "GameFramework/Pawn.h"
 #include "PaperCharacter.h"
-#include "EnemyPawn.generated.h"
+#include "PaperEnemy.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class EGGLETONPROJECT_API AEnemyPawn : public APawn
+class EGGLETONPROJECT_API APaperEnemy : public APaperCharacter
 {
 	GENERATED_UCLASS_BODY()
 
-		virtual void BeginPlay() override;
-
-protected:
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Statistics)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Statistics)
 		int32 CurrentHealth;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Statistics)
@@ -27,5 +22,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Interactions)
 		bool IsGrappled;
 
-
+	UPROPERTY(EditAnywhere, BlueprintRead, Category = PartolPoint)
+		Vector3 StartPoint;
+	
+	UPROPERTY(EditAnywhere, BlueprintRead, Category = PartolPoint)
+		Vector3 EndPoint;
 };
