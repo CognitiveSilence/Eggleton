@@ -12,19 +12,28 @@ UCLASS()
 class EGGLETONPROJECT_API APaperEnemy : public APaperCharacter
 {
 	GENERATED_UCLASS_BODY()
+	
+	virtual void BeginPlay() override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Statistics)
+protected:
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = Statistics)
 		int32 CurrentHealth;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Statistics)
 		int32 MaxHealth;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Interactions)
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = Interactions)
 		bool IsGrappled;
 
-	UPROPERTY(EditAnywhere, BlueprintRead, Category = PartolPoint)
-		Vector3 StartPoint;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Patrol)
+		AActor* StartPoint;
 	
-	UPROPERTY(EditAnywhere, BlueprintRead, Category = PartolPoint)
-		Vector3 EndPoint;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Patrol)
+		AActor* EndPoint;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Patrol)
+		float PatrolDist;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Patrol)
+		float PatrolRate;
 };
