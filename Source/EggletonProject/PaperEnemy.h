@@ -36,4 +36,7 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Patrol)
 		float PatrolRate;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Interactions)
+		FVector PlayerLocationPreLerp;
 };
