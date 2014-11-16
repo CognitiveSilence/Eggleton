@@ -16,7 +16,7 @@ void APaperEnemy::BeginPlay()
 
 	if (GEngine)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("BeginPlay Called on APaperEnemy"));
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("BeginPlay Called on APaperEnemy"));
 		CurrentHealth = MaxHealth;
 
 	}
